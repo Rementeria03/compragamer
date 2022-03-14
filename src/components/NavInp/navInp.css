@@ -1,0 +1,15 @@
+.navInp{
+    width: 33.3%;
+}
+
+@media screen and (max-width: 792px){
+    .navInp{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 584px) {
+    .navInp{
+        width: 100%;
+    }
+}
