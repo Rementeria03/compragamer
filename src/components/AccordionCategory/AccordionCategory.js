@@ -73,7 +73,7 @@ function AccordionCategory({categorys}) {
             <SubAccordionCategory 
                 category={categorys[10]} 
                 subCategorys={[
-                    'Auriculares',
+                    'Auricularess',
                     'Parlantes',
                     'Micrófonos',
                     'Accesorios para auriculares']}>
