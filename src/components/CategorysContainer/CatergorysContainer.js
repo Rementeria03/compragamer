@@ -25,7 +25,8 @@ function CategorysContainer() {
     ];
 
     return (
-        <Box
+        <Box 
+            w='sm'
             p='3'
             boxShadow='1px 1px 1em #c8c8c8'
             borderRadius='base'

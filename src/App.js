@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import PagesNavigator from './components/PagesNavigator/PagesNavigator';
 import './App.css';
-import ProdContainer from './components/ProdContainer/ProdContainer';
+import Productos from './pages/Productos';
 
 function App() {
   return (
@@ -12,10 +12,9 @@ function App() {
         <NavBar></NavBar>
         <PagesNavigator />
         <Routes>
-          <Route path='/' element={<ProdContainer></ProdContainer>}/>
-          <Route path='/productos' element={<ProdContainer></ProdContainer>}/>
-          <Route path='/productos/:catId' element={<ProdContainer></ProdContainer>}/>
-          <Route path='/productos/:catId/:subCategory' element={<ProdContainer></ProdContainer>}/>
+          <Route path='/' element={<Productos></Productos>}/>
+          <Route path='/productos' element={<Productos></Productos>}/>
+          <Route path='/productos/:catId' element={<Productos></Productos>}/>
         </Routes>
       </BrowserRouter>
     </CartProvider>

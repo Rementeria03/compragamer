@@ -4,7 +4,7 @@ import ButtonsPageNavigator from "../ButtonsPageNavigator/ButtonsPageNavigator";
 
 function PagesNavigator() {
 
-    const [visual] = useMediaQuery('(max-width: 792px)');
+    const [visual] = useMediaQuery('(max-width: 800px)');
 
     const navs = [
         {id: 0, cat:'Productos'},
