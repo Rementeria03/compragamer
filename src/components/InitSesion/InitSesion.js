@@ -17,6 +17,7 @@ function InitSesion() {
             fontWeight='medium'
             m='0 20px 0 0'
             fontFamily='Urbanist'
+            boxShadow='1px 1px .3em grey'
         >
             <Icon as={CgProfile} w={6} h={6} color='#fff' mr='10px'/>
             Iniciar sesion

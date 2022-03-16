@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {Box} from '@chakra-ui/react'
 import { db } from "../../firebase/config";
+import ProductsList from "../ProductsList/ProductsList";
 
 function ProductsContainer({productos, setProductos}) {
 
@@ -29,12 +30,9 @@ function ProductsContainer({productos, setProductos}) {
 
     return (
         <Box
-            p='3'
-            boxShadow='1px 1px 1em #c8c8c8'
-            borderRadius='base'
             fontFamily= 'Urbanist'  
         >
-            
+            <ProductsList productos={productos}></ProductsList>
         </Box>
     );
 }

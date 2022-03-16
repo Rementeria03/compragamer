@@ -36,11 +36,18 @@ function ButtonsPageNavigator({navs, visual}) {
                 >
                 {navs.map((lks) => {
                     return(
-                        <Box h='max' mx='3' key={lks.id}>
+                        <Box
+                            h='max' 
+                            mx='3' 
+                            key={lks.id}
+                            _hover={{
+                                color: '#fff'
+                            }}
+                            >
                             <NavLink 
-                                to={`${lks.cat}`.toLowerCase()}
-                                style={
-                                    {fontFamily:'Urbanist',
+                                to={`${lks.cat}`.toLowerCase().split(" ").join("")}
+                                style={{
+                                    fontFamily:'Urbanist',
                                     fontWeight: '500',
                                     fontSize: '1em'
                                 }}

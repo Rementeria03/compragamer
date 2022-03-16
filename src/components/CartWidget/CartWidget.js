@@ -22,6 +22,7 @@ function CartWidget() {
             <Icon as={IoMdCart} w={7} h={7} color='#aaa'/>
             <Box
                 backgroundColor='#f44336'
+                boxShadow='md'
                 borderRadius='full'
                 height='20px'
                 width='20px'
@@ -34,6 +35,7 @@ function CartWidget() {
                 color='#fff '
                 fontWeight='700'
                 fontSize='11px'
+                fontFamily='Urbanist'
             >
             {cantidadCarrito()}
             </Box>
