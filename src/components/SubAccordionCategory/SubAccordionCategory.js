@@ -17,7 +17,7 @@ function SubAccordionCategory({category, subCategorys}) {
                     return(
                         <Box color='grey' fontSize='14' key={subCategory} flex='1' textAlign='left'>
                             <NavLink
-                                to={`/productos/${category}/:${subCategory}`.toLowerCase()}
+                                to={`/productos/:${subCategory}`.toLowerCase()}
                             >
                                 {`- ${subCategory}`}
                             </NavLink>
