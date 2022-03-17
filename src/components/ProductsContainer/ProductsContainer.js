@@ -24,7 +24,6 @@ function ProductsContainer({productos, setProductos}) {
             .finally(()=> {
                 console.log(productos)
             })
-
     }, [catId])
 
 

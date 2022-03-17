@@ -1,7 +1,19 @@
 import { Box } from "@chakra-ui/react";
 import AccordionCategory from "../AccordionCategory/AccordionCategory";
 
-function CategorysContainer() {
+function CategorysContainer({view}) {
+
+    function seeThis(){
+        if(view){
+            return({
+                display: 'flex',
+                flexDir: 'column'
+            })
+        }
+        return({
+            display:'none'
+        })
+    }
 
     const categorys = [
         'Equipos y notebooks',
@@ -29,6 +41,9 @@ function CategorysContainer() {
             w='sm'
             p='3'
             fontFamily= 'Urbanist'
+            sx={{
+                '@media screen and (max-width: 940px)': seeThis
+            }}
         >
             <AccordionCategory categorys={categorys}/>
         </Box>

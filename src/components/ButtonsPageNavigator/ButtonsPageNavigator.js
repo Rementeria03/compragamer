@@ -1,7 +1,6 @@
 import { Box, Icon, position } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { useEffect } from "react";
 function ButtonsPageNavigator({navs, view, setView}){
 
     const styles = {
