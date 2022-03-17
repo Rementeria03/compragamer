@@ -30,7 +30,10 @@ function ProductsContainer({productos, setProductos}) {
 
     return (
         <Box
-            fontFamily= 'Urbanist'  
+            fontFamily= 'Urbanist'
+            display='flex'
+            flexDir='column'
+            gap='20px 0px' 
         >
             <ProductsList productos={productos}></ProductsList>
         </Box>

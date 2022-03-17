@@ -2,10 +2,11 @@ import { Box, Button, Image } from "@chakra-ui/react";
 import { doc } from "firebase/firestore";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import CartWidget from "../CartWidget/CartWidget";
 
 function ProductItem({...prod}) {
 
-    const {agregarAlCarrito} = useContext(CartContext);
+    const {agregarAlCarrito, estaEnCarrito} = useContext(CartContext);
 
     function handleAgregar(){
         agregarAlCarrito({
@@ -75,6 +76,7 @@ function ProductItem({...prod}) {
                     onClick={handleAgregar}
                 >
                     Agregar al carrito
+                    {estaEnCarrito(prod.id) && <CartWidget></CartWidget> }
                 </Button>
             </Box>
         </Box>
