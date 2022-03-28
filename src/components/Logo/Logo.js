@@ -3,7 +3,10 @@ import {Box} from '@chakra-ui/react';
 
 function Logo() {
     return (
-        <Box>
+        <Box
+            as='a'
+            href='/'
+        >
             <img src={logo} alt="logo compraGamer"/>
         </Box>
     );

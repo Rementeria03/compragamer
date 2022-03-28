@@ -1,26 +1,25 @@
 import { Box, Button, Image } from "@chakra-ui/react";
-import { doc } from "firebase/firestore";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
-import CartWidget from "../CartWidget/CartWidget";
 
 function ProductItem({...prod}) {
 
-    const {agregarAlCarrito, estaEnCarrito} = useContext(CartContext);
+    const {agregarAlCarrito, estaEnCarrito, setCart, cart} = useContext(CartContext);
 
     function handleAgregar(){
-        agregarAlCarrito({
-            id: prod.id,
-            cantidad: 1,
-            nombre: prod.nombre,
-            precio: prod.precio,
-            img: prod.img
-        })
+        if(!estaEnCarrito(prod.id)){
+            agregarAlCarrito({...prod, cantidad: 1})
+        }else{
+            setCart(cart.map((item) => {
+                if(item.id === prod.id){
+                    return {...item, cantidad: item.cantidad +1}
+                }
+            }))
+        }
     }
 
     return (
-        <Box
-            maxW='lg'
+        <Box maxW='lg'
             mt='3'
             p='3'
             gap='10px'
@@ -32,12 +31,9 @@ function ProductItem({...prod}) {
                 '@media (max-width: 520px)': {
                     flexDirection: 'column',
                     alignItems: 'center'
-                }
-            }}
-            >
+                }}}>
             <Image src={prod.img} />
-            <Box 
-                minW='320px' 
+            <Box minW='320px' 
                 display='flex' 
                 justifyContent='space-around' 
                 flexDirection='column'
@@ -45,17 +41,11 @@ function ProductItem({...prod}) {
                     '@media (max-width: 520px)': {
                         flexDirection: 'column',
                         alignItems: 'center'
-                    }
-                }}
-                >
-                <Box
-                    as='h3'
-                    >
+                    }}}>
+                <Box as='h3'>
                     {prod.nombre}
                 </Box>
-                <Box 
-                    as="h4"
-                    >   
+                <Box as="h4">   
                     <Box as='span' color='gray.600' fontSize='sm'>
                         $
                     </Box>
@@ -73,10 +63,8 @@ function ProductItem({...prod}) {
                     fontWeight='light'
                     fontFamily='Urbanist'
                     boxShadow='1px 1px .3em grey'
-                    onClick={handleAgregar}
-                >
+                    onClick={handleAgregar}>
                     Agregar al carrito
-                    {estaEnCarrito(prod.id) && <CartWidget></CartWidget> }
                 </Button>
             </Box>
         </Box>

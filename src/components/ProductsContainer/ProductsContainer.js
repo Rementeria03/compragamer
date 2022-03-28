@@ -22,10 +22,8 @@ function ProductsContainer({productos, setProductos}) {
                 setProductos(items)
             })
             .finally(()=> {
-                console.log(productos)
             })
     }, [catId])
-
 
     return (
         <Box

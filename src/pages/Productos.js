@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import CategorysContainer from "../components/CategorysContainer/CatergorysContainer";
 import ProductsContainer from "../components/ProductsContainer/ProductsContainer";
@@ -11,7 +11,6 @@ function Productos() {
     function showCategorys(){
         setView(!view)
     }
-    console.log(view)
 
     return (
         <Box 

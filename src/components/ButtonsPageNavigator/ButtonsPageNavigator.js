@@ -1,6 +1,7 @@
 import { Box, Icon, position } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { useEffect } from "react";
 function ButtonsPageNavigator({navs, view, setView}){
 
     const styles = {
@@ -16,17 +17,17 @@ function ButtonsPageNavigator({navs, view, setView}){
         px: 4
     }
     
+    const handleMostrar = () => {
+        setView(!view)
+        console.log(view)
+    }
+    
     const actualizarStyles = () => {
         if(view){
             return(styles)
         }else if(!view){
             return({...styles, left: '-100%'})
         }
-    }
-
-    const handleMostrar = () => {
-        setView(!view)
-        console.log(view)
     }
 
     return (
@@ -65,17 +66,16 @@ function ButtonsPageNavigator({navs, view, setView}){
                             sx={{
                                 '@media screen and (max-width: 800px)': {
                                     mb: 4,
-                                    mx: 0
-                                }
+                                    mx: 0}
                             }}
                             >
                             <NavLink 
+                                onClick={handleMostrar}
                                 to={`${lks.cat}`.toLowerCase().split(" ").join("")}
                                 style={{
                                     fontFamily:'Urbanist',
                                     fontWeight: '500',
-                                    fontSize: '1em'
-                                }}
+                                    fontSize: '1em'}}
                                 >
                                     {lks.cat}
                             </NavLink>
