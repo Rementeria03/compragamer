@@ -2,7 +2,7 @@
     width: 33.3%;
 }
 
-@media screen and (max-width: 792px){
+@media screen and (max-width: 800px){
     .navInp{
         width: 50%;
     }

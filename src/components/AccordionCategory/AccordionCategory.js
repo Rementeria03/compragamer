@@ -4,7 +4,10 @@ import SubAccordionCategory from "../SubAccordionCategory/SubAccordionCategory";
 function AccordionCategory({categorys}) {
 
     return (
-        <Accordion allowToggle>
+        <Accordion 
+            boxShadow='xl'
+            borderRadius='base'
+            allowToggle>
             <SubAccordionCategory 
                 category={categorys[0]} 
                 subCategorys={[
@@ -73,7 +76,7 @@ function AccordionCategory({categorys}) {
             <SubAccordionCategory 
                 category={categorys[10]} 
                 subCategorys={[
-                    'Auricularess',
+                    'Auriculares',
                     'Parlantes',
                     'Micrófonos',
                     'Accesorios para auriculares']}>

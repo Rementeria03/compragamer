@@ -10,7 +10,14 @@ function NavBar() {
     const [searchKey, setSearchKey] = useState('');
 
     return (
-        <Box display='flex' gap='0 20px' flexWrap='wrap' alignItems='center' justifyContent='center' p='10px 0' width='100%'>
+        <Box display='flex' 
+            gap='0 20px' 
+            flexWrap='wrap' 
+            alignItems='center' 
+            justifyContent='center' 
+            p='10px 0' 
+            width='100%'
+            >
             <Logo />
             <NavInp searchKey={searchKey} setSearchKey={setSearchKey}/>
             <Box 
@@ -19,7 +26,7 @@ function NavBar() {
                 alignItems='center'
                 justifyContent='center'
                 sx={{
-                    "@media (max-width: 792px)":{
+                    "@media (max-width: 800px)":{
                         mt: 4
                     }
                 }}

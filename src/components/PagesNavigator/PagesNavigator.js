@@ -1,10 +1,11 @@
 import { Box, useMediaQuery } from "@chakra-ui/react";
-import { useState } from "react";
 import ButtonsPageNavigator from "../ButtonsPageNavigator/ButtonsPageNavigator";
+import {useState} from 'react';
+
 
 function PagesNavigator() {
 
-    const [visual] = useMediaQuery('(max-width: 792px)');
+    const [view, setView] = useState(false);
 
     const navs = [
         {id: 0, cat:'Productos'},
@@ -24,8 +25,13 @@ function PagesNavigator() {
             alignItems='center'
             justifyContent='center'
             position='relative'
+            sx={{
+                '@media screen and (max-width: 800px)':{
+                    justifyContent: 'flex-start'
+                }
+            }}
         >
-            <ButtonsPageNavigator visual={visual} navs={navs}/>
+            <ButtonsPageNavigator view={view} setView={setView} navs={navs}/>
         </Box>
     );
 }

@@ -1,49 +1,81 @@
-import { Box, Icon } from "@chakra-ui/react";
+import { Box, Icon, position } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { useEffect } from "react";
+function ButtonsPageNavigator({navs, view, setView}){
 
-function ButtonsPageNavigator({navs, visual}) {
-
-    function hamburgerTime ( visual ){
-        if(visual){
-            return({
-                display: 'block',
-                position: 'absolute',
-                left: '-100%',
-                top: '4rem'
-            })
+    const styles = {
+        display: 'flex',
+        flexDirection:'column',
+        alignItems: 'flex-start',
+        position: 'absolute',
+        left: 0,
+        top: '3.9rem',
+        backgroundColor: '#fd611a',
+        zIndex: 1,
+        color: '#fff',
+        px: 4
+    }
+    
+    const handleMostrar = () => {
+        setView(!view)
+        console.log(view)
+    }
+    
+    const actualizarStyles = () => {
+        if(view){
+            return(styles)
+        }else if(!view){
+            return({...styles, left: '-100%'})
         }
-        return;
     }
 
     return (
         <>
-        {visual
-            ?   <Box w='full'
-                display='flex'
-                alignItems='center'
-                justifyContent='flex-start'
+            <Box //hamburger
+                w='max'
+                display='none'
+                onClick={handleMostrar}
+                sx={{
+                    '@media screen and (max-width: 800px)': {
+                        display: 'flex',
+                        alignItems:'center',
+                        justifyContent:'flex-start',
+                    }
+                }}
                 >
                 <Icon as={HamburgerIcon} w={6} h={6} color="#fff"/>
             </Box>
-            :   <Box display='flex'
+            <Box display='flex'
                 alignItems='center'
                 justifyContent='space-around'
                 w='full'
                 sx={{
-                    '@media (max-width: 792px)': hamburgerTime             
+                    '@media screen and (max-width: 800px)': actualizarStyles
                 }}
                 >
-                {navs.map((lks) => {
+                {navs.map((lks) => { //return navigation boxes
                     return(
-                        <Box h='max' mx='3' key={lks.id}>
+                        <Box
+                            h='max' 
+                            mx='3' 
+                            key={lks.id}
+                            _hover={{
+                                color: '#fff'
+                            }}
+                            sx={{
+                                '@media screen and (max-width: 800px)': {
+                                    mb: 4,
+                                    mx: 0}
+                            }}
+                            >
                             <NavLink 
-                                to={`${lks.cat}`.toLowerCase()}
-                                style={
-                                    {fontFamily:'Urbanist',
+                                onClick={handleMostrar}
+                                to={`${lks.cat}`.toLowerCase().split(" ").join("")}
+                                style={{
+                                    fontFamily:'Urbanist',
                                     fontWeight: '500',
-                                    fontSize: '1em'
-                                }}
+                                    fontSize: '1em'}}
                                 >
                                     {lks.cat}
                             </NavLink>
@@ -51,9 +83,11 @@ function ButtonsPageNavigator({navs, visual}) {
                     )
                 })}
             </Box>
-        }
-    </>
+        </>
     );
 }
 
 export default ButtonsPageNavigator;
+
+
+
