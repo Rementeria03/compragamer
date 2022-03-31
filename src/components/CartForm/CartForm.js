@@ -1,9 +1,5 @@
 function CartForm() {
-    return (
-        <Box>
-            
-        </Box>
-    );
+  return <Box></Box>;
 }
 
 export default CartForm;
