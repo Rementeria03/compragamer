@@ -3,8 +3,16 @@ import CartTable from "../components/CartTable/CartTable";
 
 function Cart() {
   return (
-    <Box w="full" height="full">
-      <Box w="max" h="max">
+    <Box
+      w="full"
+      px={6}
+      py={4}
+      height="full"
+      display="flex"
+      flexDir="column"
+      alignItems="center"
+    >
+      <Box w="full" h="full">
         <CartTable></CartTable>
       </Box>
     </Box>

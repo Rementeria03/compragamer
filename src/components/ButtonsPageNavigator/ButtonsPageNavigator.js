@@ -7,7 +7,7 @@ function ButtonsPageNavigator({ navs, view, setView }) {
     flexDirection: "column",
     alignItems: "flex-start",
     position: "absolute",
-    left: 0,
+    left: "-100%",
     top: "3.9rem",
     backgroundColor: "#fd611a",
     zIndex: 1,
@@ -18,7 +18,7 @@ function ButtonsPageNavigator({ navs, view, setView }) {
     if (view) {
       return styles;
     } else if (!view) {
-      return { ...styles, left: "-100%" };
+      return { ...styles, left: 0 };
     }
   };
 
@@ -75,7 +75,7 @@ function ButtonsPageNavigator({ navs, view, setView }) {
                 style={{
                   fontFamily: "Urbanist",
                   fontWeight: "500",
-                  fontSize: "1em",
+                  fontSize: "16px",
                 }}
               >
                 {lks.cat}
