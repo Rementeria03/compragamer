@@ -1,4 +1,13 @@
-import { Table, Thead, Tbody, Tr, Th, Td, Box, TableCaption } from "@chakra-ui/react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Box,
+  TableCaption,
+} from "@chakra-ui/react";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
@@ -10,7 +19,7 @@ function CartTable() {
     hd: {
       fontFamily: "Urbanist",
       fontSize: "16px",
-      pl: 2
+      pl: 2,
     },
     items: {
       fontFamily: "Urbanist",
@@ -34,8 +43,8 @@ function CartTable() {
             return (
               <Tr key={prod.id}>
                 <Td sx={styles.items}>{prod.nombre}</Td>
-                <ItemCount cantidad={prod.cantidad}/>
-                <Td sx={styles.items}>${prod.cantidad*prod.precio}</Td>
+                <ItemCount cantidad={prod.cantidad} />
+                <Td sx={styles.items}>${prod.cantidad * prod.precio}</Td>
               </Tr>
             );
           })}

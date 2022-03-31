@@ -9,20 +9,20 @@ export const ItemCount = ({ cantidad }) => {
     h: 6,
     bg: "#fff",
     borderRadius: "full",
-    cursor: 'pointer',
+    cursor: "pointer",
     mx: 2,
     "@media  screen and (max-width: 521px)": {
-        mx: 0
-    }
+      mx: 0,
+    },
   };
   return (
-    <Td display='flex'>
+    <Td display="flex">
       <IconButton
         as={IoIosRemoveCircleOutline}
         color="#aaa"
         _hover={{ bg: "#fff" }}
         sx={styles}
-        />
+      />
       {cantidad}
       <IconButton
         as={IoIosAddCircleOutline}
