@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import ButtonsPageNavigator from "../ButtonsPageNavigator/ButtonsPageNavigator";
 import { useState } from "react";
 
