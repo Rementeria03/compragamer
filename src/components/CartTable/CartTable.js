@@ -16,10 +16,13 @@ function CartTable() {
   const { cart, totalCarrito } = useContext(CartContext);
 
   const styles = {
-    hd: {
+    head: {
       fontFamily: "Urbanist",
       fontSize: "16px",
-      pl: 2,
+      "@media screen and (max-width: 521px)": {
+        textAlign: "center",
+        px: 2,
+      },
     },
     items: {
       fontFamily: "Urbanist",
@@ -30,12 +33,14 @@ function CartTable() {
   return (
     <Box boxShadow="xl" borderRadius="0 0 50px 50px">
       <Table>
-        <TableCaption sx={styles.hd}>Total: ${totalCarrito()}</TableCaption>
+        <TableCaption fontFamily="Urbanist" fontSize="16px">
+          Total: ${totalCarrito()}
+        </TableCaption>
         <Thead>
           <Tr>
-            <Th sx={styles.hd}>Productos</Th>
-            <Th sx={styles.hd}>Cantidad</Th>
-            <Th sx={styles.hd}>Subtotal</Th>
+            <Th sx={styles.head}>Productos</Th>
+            <Th sx={styles.head}>Cantidad</Th>
+            <Th sx={styles.head}>Subtotal</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -43,7 +48,7 @@ function CartTable() {
             return (
               <Tr key={prod.id}>
                 <Td sx={styles.items}>{prod.nombre}</Td>
-                <ItemCount cantidad={prod.cantidad} />
+                <ItemCount {...prod} />
                 <Td sx={styles.items}>${prod.cantidad * prod.precio}</Td>
               </Tr>
             );

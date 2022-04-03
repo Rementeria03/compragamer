@@ -15,9 +15,9 @@ function ButtonsPageNavigator({ navs, view, setView }) {
     px: 4,
   };
   const actualizarStyles = () => {
-    if (view) {
+    if (!view) {
       return styles;
-    } else if (!view) {
+    } else if (view) {
       return { ...styles, left: 0 };
     }
   };
