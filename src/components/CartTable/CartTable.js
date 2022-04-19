@@ -4,29 +4,22 @@ import {
   Tbody,
   Tr,
   Th,
-  Td,
   Box,
   TableCaption,
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
-import { ItemCount } from "../ItemCount/ItemCount";
+import { ItemListCartTable } from "../ItemListCartTable/ItemListCartTable";
 
 function CartTable() {
-  const { cart, totalCarrito } = useContext(CartContext);
+  const { totalCarrito } = useContext(CartContext);
 
   const styles = {
     head: {
       fontFamily: "Urbanist",
-      fontSize: "16px",
       "@media screen and (max-width: 521px)": {
-        textAlign: "center",
-        px: 2,
+        pl: 2,
       },
-    },
-    items: {
-      fontFamily: "Urbanist",
-      fontSize: "sm",
     },
   };
 
@@ -44,15 +37,7 @@ function CartTable() {
           </Tr>
         </Thead>
         <Tbody>
-          {cart.map(({ ...prod }) => {
-            return (
-              <Tr key={prod.id}>
-                <Td sx={styles.items}>{prod.nombre}</Td>
-                <ItemCount {...prod} />
-                <Td sx={styles.items}>${prod.cantidad * prod.precio}</Td>
-              </Tr>
-            );
-          })}
+          <ItemListCartTable />
         </Tbody>
       </Table>
     </Box>

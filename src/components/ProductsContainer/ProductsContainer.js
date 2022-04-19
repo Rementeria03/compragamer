@@ -13,7 +13,6 @@ function ProductsContainer({ productos, setProductos }) {
     const q = catId
       ? query(productRef, where("type", "==", catId))
       : productRef;
-
     getDocs(q)
       .then((collection) => {
         const items = collection.docs.map((doc) => ({

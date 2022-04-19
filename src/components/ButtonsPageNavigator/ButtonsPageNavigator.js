@@ -1,4 +1,4 @@
-import { Box, Icon, position } from "@chakra-ui/react";
+import { Box, Icon } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 function ButtonsPageNavigator({ navs, view, setView }) {
@@ -17,11 +17,11 @@ function ButtonsPageNavigator({ navs, view, setView }) {
   const actualizarStyles = () => {
     if (!view) {
       return styles;
-    } else if (view) {
-      return { ...styles, left: 0 };
-    }
+    } return { ...styles, left: 0 };
   };
-
+  const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
   return (
     <>
       <Box //hamburger
@@ -50,15 +50,16 @@ function ButtonsPageNavigator({ navs, view, setView }) {
           "@media screen and (max-width: 800px)": actualizarStyles,
         }}
       >
-        {navs.map((lks) => {
+        {navs.map((linksNavegacion) => {
           //return navigation boxes
           return (
             <Box
               h="max"
               mx="3"
-              key={lks.id}
+              key={linksNavegacion.id}
+              color="#fff"
               _hover={{
-                color: "#fff",
+                color: "#5a5a5a",
               }}
               sx={{
                 "@media screen and (max-width: 800px)": {
@@ -71,14 +72,14 @@ function ButtonsPageNavigator({ navs, view, setView }) {
                 onClick={() => {
                   setView(!view);
                 }}
-                to={`${lks.cat}`.toLowerCase().split(" ").join("")}
+                to={removeAccents(`${linksNavegacion.cat}`.toLowerCase().split(" ").join(""))}
                 style={{
                   fontFamily: "Urbanist",
                   fontWeight: "500",
-                  fontSize: "16px",
+                  fontSize: "18px",
                 }}
               >
-                {lks.cat}
+                {linksNavegacion.cat}
               </NavLink>
             </Box>
           );

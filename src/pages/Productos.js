@@ -15,7 +15,6 @@ function Productos() {
     <Box
       w="full"
       h="full"
-      p="3 6"
       display="flex"
       position="relative"
       justifyContent="center"

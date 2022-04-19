@@ -1,4 +1,4 @@
-import { Box, Button, Td } from "@chakra-ui/react";
+import { Box, Td } from "@chakra-ui/react";
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
@@ -28,34 +28,43 @@ export const ItemCount = ({ cantidad, id }) => {
     );
   };
   return (
-    <Td>
+    <Td sx={{
+      "@media screen and (max-width: 521px)":{
+        pl: 2
+      }
+    }}>
       <Box
         h="full"
         display="flex"
         alignItems="center"
-        justifyContent="flex-start"
       >
-        <Button
+        <Box
+          as="button"
           borderRadius="full"
           border="2px solid #ff7c40"
           bg="#fff"
           onClick={handleSubtractAct}
           mr={1}
-          w={1}
+          p={0}
+          h="25px"
+          w="25px"
         >
           -
-        </Button>
+        </Box>
         {cantidad}
-        <Button
+        <Box
+          as="button"
           borderRadius="full"
-          border="2px solid #ff7c40"
+          border="2px solid #ff7c20"
           bg="#fff"
           onClick={handleAddAct}
           ml={1}
-          w={1}
+          p={0}
+          h="25px"
+          w="25px"
         >
           +
-        </Button>
+        </Box>
       </Box>
     </Td>
   );
