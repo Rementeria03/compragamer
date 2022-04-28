@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export const Footer = () => {
-    const styles = {
-        tittle : {
-          fontFamily: "Urbanist",
-          fontWeight: 400,
-          color: "#fff",
-          fontSize: "16px"
-        },
-        text: {
-            fontFamily: "Urbanist",
-            fontWeight: 200,
-            fontSize:"15px",
-            color: "#fff",
-            mt: "2"
-        },
-    };
+  const styles = {
+    tittle: {
+      fontFamily: "Urbanist",
+      fontWeight: 400,
+      color: "#fff",
+      fontSize: "16px",
+    },
+    text: {
+      fontFamily: "Urbanist",
+      fontWeight: 200,
+      fontSize: "15px",
+      color: "#fff",
+      mt: "2",
+    },
+  };
   return (
     <Box display="flex" flexDir="column">
       <Box

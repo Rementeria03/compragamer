@@ -8,7 +8,6 @@ import Cart from "./pages/Cart";
 import { Ayuda } from "./pages/Ayuda";
 import { Footer } from "./components/Footer/Footer";
 import { ArmaTuPc } from "./pages/ArmaTuPc";
-import { MarcasSponsor } from "./pages/MarcasSponsor";
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
           <Route path="/cart" element={<Cart></Cart>} />
           <Route path="/ayuda" element={<Ayuda></Ayuda>} />
           <Route path="/armatupc" element={<ArmaTuPc></ArmaTuPc>} />
-          <Route path="/marcassponsor" element={<MarcasSponsor/>} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

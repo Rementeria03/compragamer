@@ -35,8 +35,8 @@ export const BoxConsultasHelp = () => {
           });
         })
         .finally(() => {
-          console.log("Mensaje enviado")
-        })
+          console.log("Mensaje enviado");
+        });
       return;
     }
     Swal.fire({

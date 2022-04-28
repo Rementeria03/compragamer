@@ -28,16 +28,8 @@ export const ItemCount = ({ cantidad, id }) => {
     );
   };
   return (
-    <Td sx={{
-      "@media screen and (max-width: 521px)":{
-        pl: 2
-      }
-    }}>
-      <Box
-        h="full"
-        display="flex"
-        alignItems="center"
-      >
+    <Td>
+      <Box h="full" display="flex" alignItems="center">
         <Box
           as="button"
           borderRadius="full"
@@ -55,7 +47,7 @@ export const ItemCount = ({ cantidad, id }) => {
         <Box
           as="button"
           borderRadius="full"
-          border="2px solid #ff7c20"
+          border="2px solid #ff7c40"
           bg="#fff"
           onClick={handleAddAct}
           ml={1}

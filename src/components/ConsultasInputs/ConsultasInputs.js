@@ -20,9 +20,10 @@ export const ConsultasInputs = ({ consulta, createMsj }) => {
           w="full"
           variant="flushed"
           isRequired
-          placeholder="Ingrese el tipo de consulta"
+          placeholder="Ingrese un tipo de consulta"
           name="tipoDeConsulta"
           value={consulta.tipoDeConsulta}
+          errorBorderColor="red"
           onChange={createMsj}
           sx={{
             "@media screen and (max-width: 521px)": {
@@ -30,15 +31,16 @@ export const ConsultasInputs = ({ consulta, createMsj }) => {
             },
           }}
         >
+          <option value="Consulta general">Consulta general</option>
           <option value="Consulta sobre un producto">
             Consulta sobre un producto
           </option>
-          <option value="Consulta general">Consulta general</option>
           <option value="Consulta sobre mi pedido">
             Consulta sobre mi pedido
           </option>
         </Select>
         <Input
+          isRequired
           name="mailDeUsuario"
           onChange={createMsj}
           value={consulta.mailDeUsuario}

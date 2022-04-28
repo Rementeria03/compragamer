@@ -9,7 +9,6 @@ function PagesNavigator() {
     { id: 0, cat: "Productos" },
     { id: 1, cat: "Armá tu pc" },
     { id: 2, cat: "Ayuda" },
-    { id: 3, cat: "Marcas sponsor" },
   ];
 
   return (

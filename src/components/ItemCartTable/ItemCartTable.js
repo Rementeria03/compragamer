@@ -13,9 +13,6 @@ export const ItemCartTable = ({ nombre, cantidad, precio, id }) => {
     items: {
       fontFamily: "Urbanist",
       fontSize: "sm",
-      "@media screen and (max-width: 521px)": {
-        pl: 2,
-      },
     },
     icon: {
       "@media screen and (max-width: 521px)": {
@@ -46,6 +43,7 @@ export const ItemCartTable = ({ nombre, cantidad, precio, id }) => {
             cursor="pointer"
             onClick={eraseItem}
             h={4}
+            ml="2"
             color="red"
             as={FaTrashAlt}
           />

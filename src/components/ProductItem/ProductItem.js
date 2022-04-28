@@ -3,13 +3,8 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
 function ProductItem({ ...prod }) {
-  const {
-    agregarAlCarrito,
-    estaEnCarrito,
-    setCart,
-    cart,
-    cantidadDelElemento,
-  } = useContext(CartContext);
+  const { agregarAlCarrito, estaEnCarrito, setCart, cart } =
+    useContext(CartContext);
 
   function handleAdd() {
     if (!estaEnCarrito(prod.id)) {
@@ -79,17 +74,17 @@ function ProductItem({ ...prod }) {
           onClick={handleAdd}
         >
           Agregar al carrito
-          {estaEnCarrito(prod.id)
-            ? cart.map((el) => {
-                if (el.id === prod.id) {
-                  return (
-                    <Box w="full" ml="2">
-                      {el.cantidad}
-                    </Box>
-                  );
-                }
-              })
-            : ""}
+          {estaEnCarrito(prod.id) && (
+            cart.map((el) => {
+              if (el.id === prod.id) {
+                return (
+                  <Box w="full" ml="2">
+                    {el.cantidad}
+                  </Box>
+                );
+              }
+            })
+          )}
         </Button>
       </Box>
     </Box>

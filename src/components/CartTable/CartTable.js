@@ -17,14 +17,11 @@ function CartTable() {
   const styles = {
     head: {
       fontFamily: "Urbanist",
-      "@media screen and (max-width: 521px)": {
-        pl: 2,
-      },
     },
   };
 
   return (
-    <Box boxShadow="xl" borderRadius="0 0 50px 50px">
+    <Box boxShadow="md" borderRadius="md" w="full">
       <Table>
         <TableCaption fontFamily="Urbanist" fontSize="16px">
           Total: ${totalCarrito()}
